@@ -1,0 +1,182 @@
+The system is: Linux - 3.10.0-957.21.3.el7.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/3.6.2/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/bin/gmake" "cmTC_947e9/fast"
+/bin/gmake -f CMakeFiles/cmTC_947e9.dir/build.make CMakeFiles/cmTC_947e9.dir/build
+gmake[1]: Entering directory `/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_947e9.dir/testCCompiler.c.o
+/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc     -o CMakeFiles/cmTC_947e9.dir/testCCompiler.c.o   -c /home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_947e9
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_947e9.dir/link.txt --verbose=1
+/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTC_947e9.dir/testCCompiler.c.o  -o cmTC_947e9 -rdynamic 
+gmake[1]: Leaving directory `/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/bin/gmake" "cmTC_ddc09/fast"
+/bin/gmake -f CMakeFiles/cmTC_ddc09.dir/build.make CMakeFiles/cmTC_ddc09.dir/build
+gmake[1]: Entering directory `/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ddc09.dir/CMakeCCompilerABI.c.o
+/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc     -o CMakeFiles/cmTC_ddc09.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.6/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_ddc09
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ddc09.dir/link.txt --verbose=1
+/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc      -v CMakeFiles/cmTC_ddc09.dir/CMakeCCompilerABI.c.o  -o cmTC_ddc09 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc
+COLLECT_LTO_WRAPPER=/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/lto-wrapper
+Target: arm-linux-gnueabi
+Configured with: /usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/src/gcc-6.3.0/configure --host=i586-suse-linux --build=i586-suse-linux --target=arm-linux-gnueabi --prefix=/usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/install --enable-threads --disable-libmudflap --disable-libssp --disable-libstdcxx-pch --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --enable-shared --enable-lto --enable-symvers=gnu --enable-__cxa_atexit --enable-nls --enable-clocale=gnu --enable-extra-hisi-multilibs --with-sysroot=/usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/install/target --with-build-sysroot=/usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/install/target --with-gmp=/usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/obj/host-libs/usr --with-mpfr=/usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/obj/host-libs/usr --with-mpc=/usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/obj/host-libs/usr --enable-libgomp --disable-libitm --enable-poison-system-directories --with-pkgversion='HC&C V100R002C00B020_20180814'
+Thread model: posix
+gcc version 6.3.0 (HC&C V100R002C00B020_20180814) 
+COMPILER_PATH=/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/:/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../libexec/gcc/:/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/bin/
+LIBRARY_PATH=/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/:/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/:/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib/:/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/lib/:/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ddc09' '-rdynamic' '-mtls-dialect=gnu'
+ /opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/collect2 --sysroot=/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux.so.3 -X -m armelf_linux_eabi -o cmTC_ddc09 /opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib/crt1.o /opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib/crti.o /opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtbegin.o -L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0 -L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc -L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib -L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/lib -L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib CMakeFiles/cmTC_ddc09.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtend.o /opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ddc09' '-rdynamic' '-mtls-dialect=gnu'
+gmake[1]: Leaving directory `/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/bin/gmake" "cmTC_ddc09/fast"]
+  ignore line: [/bin/gmake -f CMakeFiles/cmTC_ddc09.dir/build.make CMakeFiles/cmTC_ddc09.dir/build]
+  ignore line: [gmake[1]: Entering directory `/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_ddc09.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc     -o CMakeFiles/cmTC_ddc09.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.6/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_ddc09]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ddc09.dir/link.txt --verbose=1]
+  ignore line: [/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc      -v CMakeFiles/cmTC_ddc09.dir/CMakeCCompilerABI.c.o  -o cmTC_ddc09 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/lto-wrapper]
+  ignore line: [Target: arm-linux-gnueabi]
+  ignore line: [Configured with: /usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/src/gcc-6.3.0/configure --host=i586-suse-linux --build=i586-suse-linux --target=arm-linux-gnueabi --prefix=/usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/install --enable-threads --disable-libmudflap --disable-libssp --disable-libstdcxx-pch --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --enable-shared --enable-lto --enable-symvers=gnu --enable-__cxa_atexit --enable-nls --enable-clocale=gnu --enable-extra-hisi-multilibs --with-sysroot=/usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/install/target --with-build-sysroot=/usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/install/target --with-gmp=/usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/obj/host-libs/usr --with-mpfr=/usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/obj/host-libs/usr --with-mpc=/usr1/code/CODE_CCTD_V1R2C00/code/current/SDK_CPU_UNIFIED/build/script/arm-himix200-linux/arm_himix200_build_dir/obj/host-libs/usr --enable-libgomp --disable-libitm --enable-poison-system-directories --with-pkgversion='HC&C V100R002C00B020_20180814']
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 6.3.0 (HC&C V100R002C00B020_20180814) ]
+  ignore line: [COMPILER_PATH=/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/:/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../libexec/gcc/:/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/bin/]
+  ignore line: [LIBRARY_PATH=/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/:/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/:/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib/:/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/lib/:/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ddc09' '-rdynamic' '-mtls-dialect=gnu']
+  link line: [ /opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/collect2 --sysroot=/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux.so.3 -X -m armelf_linux_eabi -o cmTC_ddc09 /opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib/crt1.o /opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib/crti.o /opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtbegin.o -L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0 -L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc -L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib -L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/lib -L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib CMakeFiles/cmTC_ddc09.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtend.o /opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib/crtn.o]
+    arg [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/collect2] ==> ignore
+    arg [--sysroot=/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-linux.so.3] ==> ignore
+    arg [-X] ==> ignore
+    arg [-m] ==> ignore
+    arg [armelf_linux_eabi] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_ddc09] ==> ignore
+    arg [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib/crt1.o] ==> ignore
+    arg [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib/crti.o] ==> ignore
+    arg [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtbegin.o] ==> ignore
+    arg [-L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0] ==> dir [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0]
+    arg [-L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc] ==> dir [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc]
+    arg [-L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib] ==> dir [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib]
+    arg [-L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/lib] ==> dir [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/lib]
+    arg [-L/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib] ==> dir [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib]
+    arg [CMakeFiles/cmTC_ddc09.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtend.o] ==> ignore
+    arg [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse library dir [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0] ==> [/opt/hisi-linux/x86-arm/arm-himix200-linux/lib/gcc/arm-linux-gnueabi/6.3.0]
+  collapse library dir [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc] ==> [/opt/hisi-linux/x86-arm/arm-himix200-linux/lib/gcc]
+  collapse library dir [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib] ==> [/opt/hisi-linux/x86-arm/arm-himix200-linux/arm-linux-gnueabi/lib]
+  collapse library dir [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/lib] ==> [/opt/hisi-linux/x86-arm/arm-himix200-linux/target/lib]
+  collapse library dir [/opt/hisi-linux/x86-arm/arm-himix200-linux/host_bin/../target/usr/lib] ==> [/opt/hisi-linux/x86-arm/arm-himix200-linux/target/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/opt/hisi-linux/x86-arm/arm-himix200-linux/lib/gcc/arm-linux-gnueabi/6.3.0;/opt/hisi-linux/x86-arm/arm-himix200-linux/lib/gcc;/opt/hisi-linux/x86-arm/arm-himix200-linux/arm-linux-gnueabi/lib;/opt/hisi-linux/x86-arm/arm-himix200-linux/target/lib;/opt/hisi-linux/x86-arm/arm-himix200-linux/target/usr/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/bin/gmake" "cmTC_12923/fast"
+/bin/gmake -f CMakeFiles/cmTC_12923.dir/build.make CMakeFiles/cmTC_12923.dir/build
+gmake[1]: Entering directory `/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_12923.dir/feature_tests.c.o
+/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc    -std=c11 -o CMakeFiles/cmTC_12923.dir/feature_tests.c.o   -c /home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_12923
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12923.dir/link.txt --verbose=1
+/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTC_12923.dir/feature_tests.c.o  -o cmTC_12923 -rdynamic 
+gmake[1]: Leaving directory `/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/bin/gmake" "cmTC_a6f0a/fast"
+/bin/gmake -f CMakeFiles/cmTC_a6f0a.dir/build.make CMakeFiles/cmTC_a6f0a.dir/build
+gmake[1]: Entering directory `/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a6f0a.dir/feature_tests.c.o
+/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc    -std=c99 -o CMakeFiles/cmTC_a6f0a.dir/feature_tests.c.o   -c /home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_a6f0a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6f0a.dir/link.txt --verbose=1
+/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTC_a6f0a.dir/feature_tests.c.o  -o cmTC_a6f0a -rdynamic 
+gmake[1]: Leaving directory `/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/bin/gmake" "cmTC_b48a5/fast"
+/bin/gmake -f CMakeFiles/cmTC_b48a5.dir/build.make CMakeFiles/cmTC_b48a5.dir/build
+gmake[1]: Entering directory `/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b48a5.dir/feature_tests.c.o
+/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc    -std=c90 -o CMakeFiles/cmTC_b48a5.dir/feature_tests.c.o   -c /home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_b48a5
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b48a5.dir/link.txt --verbose=1
+/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTC_b48a5.dir/feature_tests.c.o  -o cmTC_b48a5 -rdynamic 
+gmake[1]: Leaving directory `/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros

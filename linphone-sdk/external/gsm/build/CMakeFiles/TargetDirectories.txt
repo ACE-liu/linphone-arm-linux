@@ -1,0 +1,7 @@
+/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/edit_cache.dir
+/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/list_install_components.dir
+/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/install.dir
+/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/install/local.dir
+/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/install/strip.dir
+/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/rebuild_cache.dir
+/home/app_comm/linphone/linphone-desktop/linphone-sdk/external/gsm/build/CMakeFiles/gsm.dir
