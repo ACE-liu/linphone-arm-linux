@@ -68,6 +68,8 @@ extern void _register_videotoolbox_if_supported(MSFactory *factory);
 
 #ifdef MS2_FILTERS
 
+extern MSSndCardDesc t3audio_card_desc;
+
 #ifdef __ALSA_ENABLED__
 extern MSSndCardDesc alsa_card_desc;
 #endif
@@ -122,6 +124,8 @@ static MSSndCardDesc * ms_snd_card_descs[]={
 #ifdef __PULSEAUDIO_ENABLED__
         &pulse_card_desc,
 #endif
+    
+	&t3audio_card_desc,
 
 #ifdef __ALSA_ENABLED__
 	&alsa_card_desc,
