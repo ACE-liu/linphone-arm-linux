@@ -16,12 +16,16 @@
 #include <sys/select.h>
 
 
-#define KEEP_COONECT_TO_T3AUDIO
+#define HAVE_TIMESTAMP_HEAD
+
+#define AUDIO_READ_USE_CLIENT_MODE
 
 static int forced_rate=-1;
 
 static char* audio_read_ip = "192.168.43.1";
 static int audio_read_port = 3708;
+
+// static int audio_read_client_port = 6201;
 
 static char* audio_write_ip = "192.168.1.3";
 static int audio_write_port = 8081;
@@ -232,15 +236,10 @@ struct _T3audioReadData{
 	int nchannels;
 	uint64_t read_samples;
 	MSTickerSynchronizer *ticker_synchronizer;
-	bool_t read_started;
-	bool_t write_started;
-    bool_t has_client_connect;
     bool_t run_thread_quit;
-	bool_t start_read_data;
 	ms_thread_t thread;
 	ms_mutex_t mutex;
 	int listenfd;
-	int connfd;
 	MSBufferizer * bufferizer;
 };
 
@@ -249,7 +248,6 @@ typedef struct _T3audioReadData T3audioReadData;
 static void faad_init()
 {
     decoder = NeAACDecOpen();    
- 
 }
 
 static void faad_uninit()
@@ -317,7 +315,11 @@ static void dealWithAAcaudioData(char *data, int len, char* outdata, int *outLen
     if(data[0] == 0xa && data[1] == 0xb && data[2] == 0xc)
     {
         int len = (data[4]<<24)+(data[5]<<16)+ (data[6]<<8)+data[7]; 
-        aac_decode_data(data+8, len, outdata, outLen);
+#ifdef HAVE_TIMESTAMP_HEAD
+       aac_decode_data(data+16, len, outdata, outLen);
+#else 
+       aac_decode_data(data+8, len, outdata, outLen);
+#endif
     }
     else
     {
@@ -331,7 +333,6 @@ static bool_t sendfirstWriteFile =TRUE;
 static void initsendHeader()
 {
 	 int bits = 16;
-	ms_warning("at initHeader....." );
     memcpy(sendheader.riff.riff, "RIFF",4);
     memcpy(sendheader.riff.wave, "WAVE",4);
     memcpy(sendheader.format.fmt, "fmt ", 4);
@@ -344,7 +345,6 @@ static void initsendHeader()
     sendheader.format.bitpspl = bits;
 
     memcpy(sendheader.data.data, "data", 4);
-	ms_warning("out initHeader sendheader....." );
 }
 static void updatesendHeader()
 {
@@ -353,7 +353,6 @@ static void updatesendHeader()
 }
 static void beforesendCloseFile()
 {
-	ms_warning("at before beforesendCloseFile..............");
 	if(!sendfirstWriteFile)
 	{
     updatesendHeader();
@@ -492,7 +491,6 @@ static void* t3audio_read_run(void *p)
 					{
 						if (fdList[i] <= 0)
 						{
-							ad->has_client_connect = TRUE;
 							fdList[i] = client_sockfd;
 							break;
 						}
@@ -531,15 +529,10 @@ void t3audio_read_init(MSFilter *obj){
 	ad->nchannels=1;
 	ad->ticker_synchronizer = ms_ticker_synchronizer_new();
 	obj->data=ad;
-    ad->has_client_connect = FALSE;
-	ad->read_started=FALSE;
-	ad->write_started=FALSE;
 	ms_mutex_init(&ad->mutex,NULL);
 	// ad->thread=0;
 	ad->run_thread_quit = FALSE;
-	ad->start_read_data = FALSE;
 	ad->listenfd = -1;
-	ad->connfd = -1;
 	ad->bufferizer=ms_bufferizer_new();
 	// ms_cond_init(&ad->cond, NULL);
 	ms_thread_create(&ad->thread,NULL,t3audio_read_run,ad);
@@ -552,22 +545,14 @@ void t3audio_read_preprocess(MSFilter *obj){
 
 void t3audio_read_postprocess(MSFilter *obj){
 	T3audioReadData *ad=(T3audioReadData*)obj->data;
-	ms_warning("at of t3audio_read_postprocess....");
     ad->run_thread_quit = TRUE;
-	ad->start_read_data = FALSE;
 	ms_ticker_set_synchronizer(obj->ticker, NULL);
-	ad->read_started=FALSE;
 	faad_uninit();
-	ms_warning("out of t3audio_read_postprocess....");
 }
 
 void t3audio_read_uninit(MSFilter *obj){
 	T3audioReadData *ad=(T3audioReadData*)obj->data;
-	ms_warning("at of t3audio_read_uninit....");
 	ad->run_thread_quit = TRUE;
-	ad->start_read_data = FALSE;
-	// ms_cond_wait(&ad->cond, &ad->mutex);
-    ad->has_client_connect = FALSE;
 	ms_thread_join(ad->thread,NULL);
 	ms_bufferizer_destroy(ad->bufferizer);
 	ms_mutex_destroy(&ad->mutex);
@@ -586,22 +571,11 @@ void t3audio_read_process(MSFilter *obj){
 
    
    	ms_mutex_lock(&ad->mutex);
-	//    if(!ad->has_client_connect)
-	//    {
-            
-	//   om=allocb(size,0);
-	//   om->b_wptr+=size;
-	//   /*ms_message("alsa_read_process: Outputing %i bytes",size);*/
-	//   ms_queue_put(obj->outputs[0],om);
-	//    }
-	//    else
-	//    {
 	while (ms_bufferizer_get_avail(ad->bufferizer)>=size){
 
 	  om=allocb(size,0);
 	  ms_bufferizer_read(ad->bufferizer,om->b_wptr,size);
 	  om->b_wptr+=size;
-	  /*ms_message("alsa_read_process: Outputing %i bytes",size);*/
 	  ms_queue_put(obj->outputs[0],om);
 	}
 	//    }
@@ -677,13 +651,9 @@ static int init_t3audio_write_socket()
  
     if(connect(sockfd, (struct sockaddr*)&serveraddr, sizeof(serveraddr)) < 0)
     {
-	    ms_warning("init_t3audio_write_socket failed.......");
+	    ms_warning("connect to write sock failed.......");
 	    return -1;
     }
-	else
-	{
-		 ms_warning("init_t3audio_write_socket success.......");
-	}
     return sockfd;
 }
 
@@ -691,7 +661,6 @@ static unsigned int totalLen = 0;
 static void initHeader()
 {
 	 int bits = 16;
-	ms_warning("at initHeader....." );
     memcpy(header.riff.riff, "RIFF",4);
     memcpy(header.riff.wave, "WAVE",4);
     memcpy(header.format.fmt, "fmt ", 4);
@@ -704,7 +673,6 @@ static void initHeader()
     header.format.bitpspl = bits;
 
     memcpy(header.data.data, "data", 4);
-	ms_warning("out initHeader....." );
 }
 static void updateHeader()
 {
@@ -713,7 +681,6 @@ static void updateHeader()
 }
 static void beforeCloseFile()
 {
-	ms_warning("at before closeFile..............");
 	if(!firstWriteFile)
 	{
     updateHeader();
@@ -757,9 +724,8 @@ void t3audio_write_init(MSFilter *obj){
 }
 
 void t3audio_write_postprocess(MSFilter *obj){
-	T3audioReadData *ad=(T3audioReadData*)obj->data;
+	T3audioWriteData *ad=(T3audioWriteData*)obj->data;
 	ad->write_started=FALSE;
-	ms_warning("at t3audio_write_postprocess...");
 }
 
 void t3audio_write_uninit(MSFilter *obj){
