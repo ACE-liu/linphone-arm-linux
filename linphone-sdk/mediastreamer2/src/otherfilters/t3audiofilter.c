@@ -16,7 +16,7 @@
 #include <sys/select.h>
 
 
-// #define HAVE_APPEND_HEAD
+#define HAVE_APPEND_HEAD
 
 #define AUDIO_READ_USE_CLIENT_MODE
 
@@ -217,8 +217,8 @@ static void faad_uninit()
 static void aac_decode_data(char * input, const int len, char * output, int* outLen)
 {
 	NeAACDecConfigurationPtr conf;
-	 NeAACDecFrameInfo frame_info;
-	 char* pcm_data;
+	NeAACDecFrameInfo frame_info;
+	char* pcm_data;
     if(!aac_init)
     {
         faad_init();
@@ -231,8 +231,8 @@ static void aac_decode_data(char * input, const int len, char * output, int* out
         conf->outputFormat = FAAD_FMT_16BIT;
         conf->dontUpSampleImplicitSBR = 1;
         NeAACDecSetConfiguration(decoder, conf);
-         NeAACDecInit(decoder, (unsigned char*)input, len, &sample_rate, &channelNum);
-         aac_init = TRUE;
+		NeAACDecInit(decoder, (unsigned char*)input, len, &sample_rate, &channelNum);
+		aac_init = TRUE;
     }
     pcm_data = (char*)NeAACDecDecode(decoder, &frame_info, (unsigned char *)input, len); 
 
@@ -266,7 +266,7 @@ static void aac_decode_data(char * input, const int len, char * output, int* out
 // droplvl：0是I帧，1是P帧，2是B帧
 static void dealWithAAcaudioData(char *data, int len, char* outdata, int *outLen)
 {
-    if(len<=8)
+    if(len<=16)
     {     
       return;
     }
@@ -274,7 +274,7 @@ static void dealWithAAcaudioData(char *data, int len, char* outdata, int *outLen
     if(data[0] == 0xa && data[1] == 0xb && data[2] == 0xc)
     {
 		int len = (data[4]<<24)+(data[5]<<16)+ (data[6]<<8)+data[7]; 
-		aac_decode_data(data+8, len, outdata, outLen);
+		aac_decode_data(data+16, len, outdata, outLen);
 
     }
 	else
@@ -353,7 +353,7 @@ static void* t3audio_read_run(void *p)
 				{
 					memset(databuf, 0, 2048);
 					m_nRecvLen = recv(fd, databuf, 2048, 0);
-					ms_warning("audio_read get one package::::::: %d\n", m_nRecvLen);
+					// ms_warning("audio_read get one package::::::: %d\n", m_nRecvLen);
 					if(m_nRecvLen>8)
 					{
 					   decodeLen = 0;
@@ -446,7 +446,7 @@ static void* t3audio_read_run(void *p)
 	{
 		memset(databuf, 0, 2048);
 		recvLen = recv(ad->listenfd, databuf, 2048, 0);
-		ms_warning("audio_read get== one package::::::: %d\n", recvLen);
+		// ms_warning("audio_read get== one package::::::: %d\n", recvLen);
 		if(recvLen>8)
 		{
 			decodeLen = 0;
@@ -481,11 +481,9 @@ void t3audio_read_init(MSFilter *obj){
 	ad->ticker_synchronizer = ms_ticker_synchronizer_new();
 	obj->data=ad;
 	ms_mutex_init(&ad->mutex,NULL);
-	// ad->thread=0;
 	ad->run_thread_quit = FALSE;
 	ad->listenfd = -1;
 	ad->bufferizer=ms_bufferizer_new();
-	// ms_cond_init(&ad->cond, NULL);
 	ms_thread_create(&ad->thread,NULL,t3audio_read_run,ad);
 }
 
@@ -508,7 +506,7 @@ void t3audio_read_uninit(MSFilter *obj){
 	ms_bufferizer_destroy(ad->bufferizer);
 	ms_mutex_destroy(&ad->mutex);
 	ms_ticker_synchronizer_destroy(ad->ticker_synchronizer);
-	 ms_free(ad);
+	ms_free(ad);
 	ms_warning("out of t3audio_read_uninit....");
 }
 
@@ -653,15 +651,15 @@ void t3audio_write_process(MSFilter *obj){
 	mblk_t *im =NULL;
 	int size;
 	int samples;
-	int msgsize;
+	// int msgsize;
 	T3audioWriteData *ad=(T3audioWriteData*)obj->data;
 	if(ad->connfd <= 0)
 	   ad->connfd = init_t3audio_write_socket();
 	ad->write_started = TRUE;
 	while ((im=ms_queue_get(obj->inputs[0]))!=NULL){
 		size=im->b_wptr-im->b_rptr;
-		 msgsize = msgdsize(im);
-		ms_warning("get package len:::::::::::::: %d, msgsize: %d", size, msgsize);
+		//  msgsize = msgdsize(im);
+		// ms_warning("get package len:::::::::::::: %d, msgsize: %d", size, msgsize);
 		while((size=im->b_wptr-im->b_rptr)>0){
 			// samples=size/(2*ad->nchannels);
 			samples=size;
